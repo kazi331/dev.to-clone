@@ -21,7 +21,7 @@ function TopicCard() {
   }
   useEffect(() => {
     loadTags();
-  }, [])
+  }, [loadTags])
 
   if (!tag) {
     tag = {

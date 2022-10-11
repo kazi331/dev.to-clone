@@ -25,7 +25,7 @@ const Topic = () => {
   }
   useEffect(() => {
     loadPosts();
-  }, []);
+  }, [loadPosts]);
 
   // handle 0 posts in topic component 
   if (posts.length < 1) {

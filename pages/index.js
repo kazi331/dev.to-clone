@@ -18,7 +18,7 @@ const Home = () => {
   }
   useEffect(() => {
     loadPosts();
-  }, []);
+  }, [loadPosts]);
   if (posts.length < 1) {
     return (
       <h3>Loading....</h3>
