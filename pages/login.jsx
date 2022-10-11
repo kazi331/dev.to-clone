@@ -1,13 +1,17 @@
 import axios from 'axios'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import SocialLogin from '../comp/SocialLogin'
+import React from 'react'
 
 const Login = () => {
   const [inputs, setInputs] = useState({});
   const [err, setErr] = useState(null);
   const navigate = useRouter();
+
+
+
   const handleChange = e => {
     setInputs(prev => ({ ...prev, [e.target.name]: e.target.value }))
   }

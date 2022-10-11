@@ -1,17 +1,17 @@
 
+import Image from 'next/image';
+import Link from 'next/link';
 import SideMenu from '../../comp/SideMenu';
-import { DeleteIcon, EditIcon } from '../../resources/Icons';
 import cover from '../../resources/cover.jpeg';
-import Link from 'next/link'
-import Image from 'next/image'
-import { useRouter } from 'next/router'
+import { DeleteIcon, EditIcon } from '../../resources/Icons';
 
 const Article = () => {
-    let router = useRouter()
-    let { id } = router.query;
+    // let router = useRouter()
+    // let { id } = router.query;
     // id = id.slice(-1);
     return (
-        <div className='single container'>
+        <div className='container'>
+        <div className='single'>
             <div className="content">
                 <Image className='thumbnail' src={cover} alt="" />
                 <div className="content-body">
@@ -40,6 +40,7 @@ const Article = () => {
             <div className="menu">
                 <SideMenu />
             </div>
+        </div>
         </div>
     );
 };

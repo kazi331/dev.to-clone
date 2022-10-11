@@ -5,7 +5,8 @@ import Card from '../comp/Card';
 const Home = () => {
   const [posts, setPosts] = useState([]);
   const TIMEOUT_INTERVAL = 60 * 1000
-  const loadPosts = async () => {
+
+    const loadPosts = async () => {
     // const dummyjson = 'https://dummyjson.com/posts'
     const devjs = 'https://dev.to/api/articles?tag'
     try {

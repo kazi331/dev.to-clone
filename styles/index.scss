@@ -30,6 +30,10 @@ body {
   font-family: "Ubuntu", sans-serif;
 }
 
+button:focus, a:focus{
+  outline: 1px solid $accent;
+}
+
 // Login and Register page
 .login {
   display: flex;
@@ -236,7 +240,7 @@ body {
       a {
         padding: 8px 10px;
         color: $accent-color;
-        border: 1px solid $accent-color;
+        border: 1px solid $accent;
         font-size: 1rem;
         text-decoration: none;
         border-radius: 5px;

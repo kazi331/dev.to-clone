@@ -1,11 +1,28 @@
+import axios from 'axios';
 import { useRouter } from 'next/router';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-function TopicCard({ tag }) {
+function TopicCard() {
   const [follow, setFollow] = useState(false);
+  let [tag, setTag] = useState({});
   const router = useRouter()
-  const  {topic}  = router.query;
-  
+  const { topic } = router.query;
+
+  // loads all dev.to tags 
+  const loadTags = async () => {
+    const devTags = `https://dev.to/api/tags/?per_page=500`;
+    try {
+      const tags = await axios.get(devTags)
+      const selectedTag = tags.data?.find(tag => tag.name == topic)
+      setTag(selectedTag)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+  useEffect(() => {
+    loadTags();
+  }, [])
+
   if (!tag) {
     tag = {
       "id": 154,

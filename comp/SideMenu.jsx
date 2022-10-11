@@ -20,7 +20,7 @@ const SideMenu = () => {
             <div className="posts">
                 {
                     posts.slice(0, 5).map(post => <div key={post.id}>
-                        <h4><a href={`/article/2`}>{post.title}</a></h4>
+                        <h4><a href={`/article/`+post.id}>{post.title}</a></h4>
                         <p>{post.body.slice(0, 100)}</p>
                     </div>)
                 }
